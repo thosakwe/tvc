@@ -1,0 +1,20 @@
+targets:
+  _a:
+    sources:
+      - lib/src/models/diff.dart
+      - lib/src/models/user.dart
+  _b:
+    dependencies:
+      - ":_a"
+    sources:
+      - lib/src/models/file_change.dart
+  _c:
+    dependencies:
+      - ":_b"
+    sources:
+      - lib/src/models/commit.dart
+  $default:
+    dependencies:
+      - ":_c"
+    sources:
+      - lib/src/models/repository.dart
